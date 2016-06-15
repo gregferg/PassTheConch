@@ -22,7 +22,7 @@ class User < ActiveRecord::Base
 
   has_many :user_games
 
-  has_many :stories
-   through: :user_games
+  has_many :stories,
+   through: :user_games,
    source: :story
 end
