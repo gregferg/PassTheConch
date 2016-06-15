@@ -13,9 +13,13 @@ class Prompt < ActiveRecord::Base
   validates :word, presence: true, uniqueness: true
   validates :part_of_speech, presence: true, inclusion: {in: ['living thing', 'object', 'adjective', 'event']}
 
-  def is_vowel?(let)
-    ["a", "e", "i", "o", "u"].include?(let)
-  end
+  VOWELS = {
+    "a": true,
+    "e": true,
+    "i": true,
+    "o": true,
+    "u": true
+  }
 
   def random_prompt(dict)
     # Put words into a hash, where keys are part of speech. Single O(n) operation allows for constant random sampling.
@@ -29,13 +33,13 @@ class Prompt < ActiveRecord::Base
     prompt = "Your story begins with "
 
     part1 = words_hash['adjective'].sample +  " " + words_hash['living thing'].sample
-    part1 = is_vowel?(part1[0]) ? "an " + part1 : "a " + part1
+    part1 = VOWELS[part1[0]] ? "an " + part1 : "a " + part1
 
     part2 = words_hash['object'].sample
-    part2 = is_vowel?(part2[0]) ? "an " + part2 : "a " + part2
+    part2 = VOWELS[part2[0]] ? "an " + part2 : "a " + part2
 
     partfinal = words_hash['adjective'].sample + " " + words_hash['event'].sample
-    partfinal = is_vowel?(partfinal[0]) ? "an " + partfinal : "a " + partfinal
+    partfinal = VOWELS[partfinal[0]] ? "an " + partfinal : "a " + partfinal
 
     if rand > 0.5
       prompt += (part1 + ", " + part2 + ", and " + partfinal)

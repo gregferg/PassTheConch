@@ -21,4 +21,9 @@ class Story < ActiveRecord::Base
    class_name: "User",
    foreign_key: :current_user_id
 
+   has_many :user_games
+
+   has_many :users,
+    through: :user_games,
+    source: :user
 end

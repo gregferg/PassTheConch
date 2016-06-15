@@ -36,7 +36,7 @@ Prompt.create([
   { word: 'airplane', part_of_speech: 'object' },
   { word: 'race car', part_of_speech: 'object' },
   { word: 'shopping mall', part_of_speech: 'object' },
-  { word: 'box social', part_of_speech: 'object' },
+  { word: 'box social', part_of_speech: 'event' },
   { word: 'parade', part_of_speech: 'event' },
   { word: 'date', part_of_speech: 'event' },
   { word: 'movie', part_of_speech: 'event' },
