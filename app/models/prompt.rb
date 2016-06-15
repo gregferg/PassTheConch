@@ -10,4 +10,6 @@
 #
 
 class Prompt < ActiveRecord::Base
+  validates :word, presence: true, uniqueness: true
+  validates :part_of_speech, presence: true, inclusion: {in: ['Person', 'Occupation', 'Place', 'Object', 'Adjective', 'Event']}
 end

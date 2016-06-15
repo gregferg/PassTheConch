@@ -13,4 +13,12 @@
 #
 
 class Story < ActiveRecord::Base
+  validates :sentences_left, inclusion: { in: 0..10 }, presence: true
+  validates :status, inclusion: { in: ['Pending', 'In Progress', 'Complete']}
+  validates :current_user_id, :prompt, :title, presence: true
+
+  has_one :current_user
+   class_name: "User",
+   foreign_key: :current_user_id
+
 end

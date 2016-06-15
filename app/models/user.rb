@@ -21,7 +21,8 @@ class User < ActiveRecord::Base
   attr_reader :password
 
   has_many :user_games
-  has_many :games,
-   through: :user_games
 
+  has_many :stories
+   through: :user_games
+   source: :story
 end
