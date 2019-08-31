@@ -1,28 +1,8 @@
-== README
+--***Please note this application was made in 2016 and is not a current reflection of my skills***--
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#Pass The Conch
+Pass The Conch is a short creative writing game that could be used as a writing warm up, to get some creative juices flowing, or just for fun! It is a partner based game in which both players work together to write a 10 sentence story. Each story begins with a randomly generated prompt for which the players to build off of. Each player has a minute to write a sentence, and it switches who writes a sentence back and forth until the story reaches 10 sentences.
 
-Things you may want to cover:
+Feel free to follow the how to play  [Heroku link][here]
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+[here]: https://www.snapshots.design/
